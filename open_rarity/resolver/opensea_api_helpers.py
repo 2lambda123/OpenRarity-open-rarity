@@ -17,6 +17,7 @@ from open_rarity.models.token_metadata import (
 )
 from open_rarity.models.token_standard import TokenStandard
 from open_rarity.resolver.models.collection_with_metadata import CollectionWithMetadata
+from security import safe_requests
 
 logger = logging.getLogger("open_rarity_logger")
 
@@ -54,7 +55,7 @@ def fetch_opensea_collection_data(slug: str) -> dict:
     Raises:
         Exception: If API request fails
     """
-    response = requests.get(OS_COLLECTION_URL.format(slug=slug), headers=HEADERS)
+    response = safe_requests.get(OS_COLLECTION_URL.format(slug=slug), headers=HEADERS)
 
     if response.status_code != 200:
         logger.debug(
