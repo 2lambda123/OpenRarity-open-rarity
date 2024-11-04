@@ -52,4 +52,3 @@ include_trailing_comma = true
 known_first_party = "open_rarity"
 multi_line_output = 3
 profile = "black"
-

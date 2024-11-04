@@ -76,8 +76,9 @@ class Collection:
         # We always coimpute the attributes_frequency_counts from the tokens to avoid
         # divergence.
         # TODO [10/16/22]: To remove in 1.0 release
-        attributes_frequency_counts: dict[AttributeName, dict[AttributeValue, int]]
-        | None = None,
+        attributes_frequency_counts: (
+            dict[AttributeName, dict[AttributeValue, int]] | None
+        ) = None,
         name: str | None = "",
     ):
         if attributes_frequency_counts is not None:

@@ -5,6 +5,7 @@ import os
 
 import requests
 from requests.models import HTTPError
+from security import safe_requests
 
 from open_rarity.models.collection import Collection
 from open_rarity.models.token import Token
@@ -17,7 +18,6 @@ from open_rarity.models.token_metadata import (
 )
 from open_rarity.models.token_standard import TokenStandard
 from open_rarity.resolver.models.collection_with_metadata import CollectionWithMetadata
-from security import safe_requests
 
 logger = logging.getLogger("open_rarity_logger")
 
